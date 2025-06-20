@@ -30,3 +30,12 @@ def search_student():
             print(f"[FOUND] Found:{s} \n")
             return
     print("[EROOR] Student not found")
+
+def saveINfile():
+    try:
+        with open("student.txt","w") as f:
+            for s in students:
+                f.write(f"{s['name']},{s['age']},{s['marks']},{s['passed']} \n")
+        print(f"File saved successfully")
+    except Exception as e:
+        print(f"[ERROR] Error while saving the file:{e} \n")
