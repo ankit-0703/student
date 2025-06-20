@@ -68,6 +68,27 @@ def menu():
 
         choice = input("--> Choose an Option")
 
+        if choice == '1':
+            add_student()
+        
+        elif choice == '2':
+            view_student();
+
+        elif choice == '3':
+            search_student()
+
+        elif choice == '4':
+            saveINfile()
+            
+        elif choice == '5':
+            Load_from_file()
+            
+        elif choice == '6':
+            print("Exiting")
+            break
+        else:
+            print("Choose the correct option")
+
 if __name__ == "__main__":
     try:
         menu()
