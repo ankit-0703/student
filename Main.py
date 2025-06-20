@@ -39,3 +39,37 @@ def saveINfile():
         print(f"File saved successfully")
     except Exception as e:
         print(f"[ERROR] Error while saving the file:{e} \n")
+def Load_from_file():
+    try:
+        with open("student.txt","r")as f:
+            for line in f:
+                name,age,marks,passed =line.strip().split(",")
+                students.append({
+                    "name":name,
+                    "age":int(age),
+                    "marks":float(marks),
+                    "passed":passed=="True"
+                })
+            print("Data loaded from student.txt \n")
+    except FileNotFoundError:
+        print("File not Found")
+    except Exception as e:
+        print(f"Error loading file: {e}")
+
+def menu():
+    while True:
+        print("\n Student record Manager")
+        print("1. Add Student")
+        print("2. View all student")
+        print("3. Search")
+        print("4. Save to file")
+        print("5. Load from file")
+        print("6. EXIT")
+
+        choice = input("--> Choose an Option")
+
+if __name__ == "__main__":
+    try:
+        menu()
+    except KeyboardInterrupt:
+        print("Interrupted by user")
