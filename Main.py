@@ -66,7 +66,7 @@ def menu():
         print("5. Load from file")
         print("6. EXIT")
 
-        choice = input("--> Choose an Option")
+        choice = input("--> Choose an Option: ")
 
         if choice == '1':
             add_student()
